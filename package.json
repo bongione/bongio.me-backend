@@ -1,0 +1,48 @@
+{
+  "name": "bongio.me-backend",
+  "version": "0.0.1",
+  "description": "Node backend of the bongio.me website",
+  "main": "app/bin/www.js",
+  "scripts": {
+    "build:sass-compile": "node-sass --source-map true styles/ -o app/css",
+    "build:sass-compile--watch": "node-sass --watch --source-map true styles/ -o app/css",
+    "build:babel": "babel src --copy-files --out-dir app --source-maps",
+    "build:babel--watch": "babel src --watch --copy-files --out-dir app --source-maps",
+    "build": "npm run build:sass-compile && npm run build:babel",
+    "lint": "eslint src",
+    "start": "node ./app/bin/www.js",
+    "test": "npm run lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bongione/bongio.me-backend.git"
+  },
+  "keywords": [
+    "bongio.me",
+    "website",
+    "personal"
+  ],
+  "author": "Paolo Bongiovanni <pfbongio@gmail.com>",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/bongione/bongio.me-backend/issues"
+  },
+  "homepage": "https://github.com/bongione/bongio.me-backend#readme",
+  "dependencies": {
+    "express": "^4.16.2",
+    "pug": "^2.0.0-rc.4"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "eslint": "^4.11.0",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-async-await": "0.0.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-node": "^5.2.1",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "node-sass": "^4.7.2"
+  }
+}
